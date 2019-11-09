@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>plotting 16X16 divs</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+
+</head>
+<body>
+	<div class="mynav" align="center"><ul align="center">
+		<li><a href="index.html">play continuous</a></li>
+		<li><a href="index2.html">Auto game X5</a></li>
+		<li><a href="etch.html"> Etch 16X16 work</a></li>
+	</ul></div><br><br>
+<h2 align="center">plotting 16X16 divs with hover change color div</h2><br><br>
+<section class="button_div">
+		<button class="buttons" onclick="boxToCreate()">load Matrix Divs </button><button class="buttons" onclick="removeDivs()">clear matrix </button>
+</section><br><br><br><br><br><br>
+
+<script type="text/javascript">
+var times = 1;	
+function boxToDisplay(){
+			var grid = window.prompt('Enter Grid No of divs. e.g enter 4 to display 4X4 grid matrix');
+			grid=grid*grid;
+			document.body.innerHTML +='<div id="mydiv1"></div><br><br>';
+			while (times <= grid){
+			
+					document.getElementById("mydiv1").innerHTML +='<div class="sixteendivs"></div>';
+
+					times=times+1;
+
+			}
+		}
+
+	boxToDisplay();
+	
+
+	function boxToCreate(){
+		boxToDisplay()
+	}
+
+	function removeDivs(){
+		document.getElementById("mydiv1").innerHTML ='';
+		//setTimeout(() => div.remove(), 50);
+	}
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>game function</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="mynav" align="center"><ul align="center">
+		<li><a href="index.html">play continuous</a></li>
+		<li><a href="index2.html">Auto game X5</a></li>
+		<li><a href="etch.html"> Etch 16X16 work</a></li>
+	</ul></div><br><br>
+<h2 align="center"> This is a game you keep playing until you get tired</h2>
+
+
+	<script type="text/javascript">
+		
+		var gameresult;
+		var player_options = ['rock','paper','scissors'];
+		var winner;
+		var computerScore = 0;
+		var playerScore = 0
+
+
+
+
+
+
+
+		function  Game(playerSelection,computerSelection){
+			
+			var computerSelection= player_options[Math.floor(Math.random()*player_options.length)];
+			var playerSelection=player_options[Math.floor(Math.random()*player_options.length)];
+			gameresult=playerSelection.localeCompare(computerSelection);
+			//console.log(gameresult);
+			//console.log (computerSelection);
+
+			if (gameresult == 0){
+				winner = "You have Won";
+				playerScore = playerScore+1;
+				console.log('computer score: '+ computerScore);
+		console.log('playerScore: '+ playerScore);
+
+			}
+			else { 
+
+				winner = "Computer has Won";
+				computerScore = computerScore+1;
+				console.log('computer score: '+ computerScore);
+		console.log('playerScore: '+ playerScore);
+
+			}
+			//console.log(winner);
+			return winner;
+
+		}
+		function playGame(){
+				var i=1;
+				var playtimes =window.prompt("How many rounds do want to play? enter a digit like 10 to play 10 rounds");
+				while(i <= playtimes){
+					Game();
+					i=i+1;
+				console.log('computer score: '+ computerScore);
+				console.log('playerScore: '+ playerScore);
+
+				}
+			
+
+		if (playerScore>computerScore){
+			document.body.innerHTML +='<div id="mydiv1">You Won<br><br></div><br><br>';
+			document.getElementById("mydiv1").innerHTML +='<div class="sixteendiv">computer Score: </div>'+computerScore+'<br><br><br><br><br>';
+			document.getElementById("mydiv1").innerHTML +='<div class="sixteendiv"> Your Score: </div>'+playerScore+'<br><br><br>';
+		}
+		else if (playerScore == computerScore){
+			document.body.innerHTML +='<div id="mydiv1">game ended in draw <br><br> </div><br><br>';
+			document.getElementById("mydiv1").innerHTML +='<div class="sixteendiv">computer Score: </div>'+computerScore+'<br><br><br><br><br>';
+			document.getElementById("mydiv1").innerHTML +='<div class="sixteendiv"> Your Score: </div>'+playerScore+'<br><br><br>';
+		}
+
+
+		else{
+			document.body.innerHTML +='<div id="mydiv1">You lost <br><br> </div><br><br>';
+			document.getElementById("mydiv1").innerHTML +='<div class="sixteendiv">computer Score: </div>'+computerScore+'<br><br><br><br><br>';
+			document.getElementById("mydiv1").innerHTML +='<div class="sixteendiv"> Your Score: </div>'+playerScore+'<br><br><br>';
+		}
+	}
+
+		document.body.innerHTML +='<br><br><br><br><div id="mydiv2">Play Again <br><br></div><br><br>';
+		var playbutton = document.getElementById("mydiv2");
+		playbutton.onclick(playGame());
+
+
+
+
+		</script>
+</body>
+</html>

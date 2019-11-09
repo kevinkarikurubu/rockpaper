@@ -1,0 +1,46 @@
+ul{
+			margin-left: 40px;
+		}
+
+		ul li{
+			list-style-type: none;
+			text-decoration: none;
+			float:left;
+			padding: 20px;
+			font-size: 25pt;
+			box-shadow:0 1rem 3rem rgba(0,0,0,.175)!important; 
+			z-index: +10;
+		}
+		h2{
+
+			padding:20px;
+			margin-top: 100px;
+			box-shadow:0 1rem 3rem rgba(0,0,0,.175)!important; 
+			z-index: +10;
+		}
+		a{
+			text-decoration: none;
+		}
+.sixteendivs{
+		background-color:blue;
+		padding: 3%;
+		z-index: +3;
+		float:left; 
+		box-shadow:0 1rem 3rem rgba(0,0,0,.175)!important; 
+		}
+
+	div:hover{
+		background-color:#bbb   !important;
+		}
+
+	.buttons{
+		width:40px;
+		height:40px;
+		padding:30px;
+		background-color: red;
+		border-radius: 10px;
+	}
+
+.buttons{
+	float:left ;
+}
